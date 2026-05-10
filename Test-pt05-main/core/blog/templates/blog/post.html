@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Новости - дня</h1>
+    {% for post in posts %}
+        <h2> {{ post.title }} </h2>
+        <h2> {{ post.description }} </h2>
+        <h2> {{ post.author }} </h2>
+        <h2> {{ post.date }} </h2>
+        {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}" style="width: 200px;">
+        {% else %}
+        <p>Изображение отсутствует</p>
+        {% endif %}
+
+    {% endfor %}
+
+</body>
+</html>
